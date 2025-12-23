@@ -1,0 +1,280 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* ================= BODY & BACKGROUND ================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    #ffd1dc,
+    #fff0f6,
+    #ffe6f0,
+    #fbeaff
+  );
+  overflow: hidden;
+}
+
+/* romantic glow overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,182,193,0.35), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(255,105,180,0.25), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(255,192,203,0.3), transparent 45%);
+  animation: anniversaryGlow 10s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -2;
+}
+
+@keyframes anniversaryGlow {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+.song {
+  visibility: hidden;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  visibility: hidden;
+  width: 100vw;
+  animation: softFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes softFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
+
+.container > div {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 20vh;
+}
+
+/* ================= TEXT SECTION ================= */
+.one {
+  font-size: 4.5rem;
+  color: #ff4f9a;
+  text-shadow: 0 4px 12px rgba(255,105,180,0.35);
+}
+
+.two {
+  font-size: 1.2rem;
+  font-weight: lighter;
+}
+
+.three {
+  font-size: 3rem;
+  color: #ff4f9a;
+}
+
+/* ================= MESSAGE BOX ================= */
+.four .text-box {
+  background: linear-gradient(180deg, #fff5fa, #ffffff);
+  border: 1px solid rgba(255,105,180,0.4);
+  border-radius: 14px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  position: relative;
+  width: 600px;
+  box-shadow:
+    0 15px 40px rgba(255,105,180,0.25),
+    inset 0 0 20px rgba(255,182,193,0.25);
+}
+
+.text-box p {
+  margin: 0;
+  text-align: left;
+  color: #333;
+  line-height: 1.6;
+}
+
+.text-box span {
+  visibility: hidden;
+}
+
+/* SEND BUTTON */
+.text-box .fake-btn {
+  background: linear-gradient(135deg, #ff7eb3, #ff4f9a);
+  border-radius: 6px;
+  bottom: -55px;
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  position: absolute;
+  right: 10px;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 20px rgba(255,79,154,0.45);
+}
+
+/* ================= IDEA SECTION ================= */
+.five p {
+  font-size: 2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.idea-3 strong {
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+  border-radius: 6px;
+  display: inline-block;
+  padding: 4px 10px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(255,105,180,0.4);
+}
+
+.five .idea-5 {
+  font-size: 4rem;
+}
+
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
+  display: inline-block;
+}
+
+.idea-6 span {
+  font-size: 15rem;
+}
+
+/* ================= IMAGE SECTION ================= */
+.six {
+  position: relative;
+  top: 10vh;
+  z-index: 1;
+}
+
+.six img {
+  display: inline-block;
+  height: 350px;
+  max-width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(255,105,180,0.35);
+}
+
+/* ================= BALLOONS ================= */
+.baloons img {
+  display: inline-block;
+  position: absolute;
+}
+
+.baloons img:nth-child(even) {
+  left: -10%;
+}
+
+.baloons img:nth-child(odd) {
+  right: -10%;
+}
+
+.baloons img:nth-child(3n + 0) {
+  left: 30%;
+}
+
+/* ================= CONFETTI ================= */
+.seven,
+.eight {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  pointer-events: none;
+}
+
+.eight svg {
+  left: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 25px;
+  z-index: -1;
+}
+
+.eight svg:nth-child(1) { fill: #ff9a9e; left: 5vw; top: 7vh; }
+.eight svg:nth-child(2) { fill: #fad0c4; left: 35vw; top: 23vh; }
+.eight svg:nth-child(3) { fill: #fbc2eb; left: 23vw; top: 33vh; }
+.eight svg:nth-child(4) { fill: #a18cd1; left: 57vw; top: 43vh; }
+.eight svg:nth-child(5) { fill: #ffdde1; left: 7vw; top: 68vh; }
+.eight svg:nth-child(6) { fill: #cfd9df; left: 77vw; top: 42vh; }
+.eight svg:nth-child(7) { fill: #f6d365; left: 83vw; top: 68vh; }
+.eight svg:nth-child(8) { fill: #fda085; left: 37vw; top: 86vh; }
+.eight svg:nth-child(9) { fill: #fbc8d4; left: 87vw; top: 94vh; }
+
+/* ================= WISH ================= */
+.wish-hbd {
+  font-size: 3em;
+  margin: 0;
+  text-transform: uppercase;
+  color: #ff4f9a;
+  text-shadow: 0 4px 12px rgba(255,105,180,0.4);
+}
+
+#replay {
+  cursor: pointer;
+  z-index: 3;
+  color: #ff4f9a;
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
+
+  .four .text-box {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .text-box .fake-btn {
+    bottom: -45px;
+  }
+
+  .idea-6 span {
+    font-size: 10rem;
+  }
+
+  .wish-hbd {
+    font-size: 2.2em;
+  }
+}
+
+/* =====================================================
+   FIREWORKS CANVAS (TAMBAHAN SAJA)
+   ===================================================== */
+#fireworks {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* =====================================================
+   FLOWERS BLOOM CANVAS (TAMBAHAN SAJA)
+   ===================================================== */
+#flowers {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 998;
+}
